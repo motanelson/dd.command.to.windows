@@ -10,8 +10,7 @@ def retb(c,value,n):
     a=b""
     a=c*value
     f1=open(n,"wb")
-    for j in range(value):
-        f1.write(c)
+    f1.write(a)
     f1.close()
     
 def retk(c,value):
