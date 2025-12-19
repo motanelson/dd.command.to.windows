@@ -1,6 +1,7 @@
 k=1024
 m=k*k
 g=m*k
+t=g*k
 cc=b"\x00"
 print("\033c\033[40;37m\ngive me the output file name ? ")
 kk=b""
@@ -12,22 +13,6 @@ def retb(c,value,n):
     f1=open(n,"wb")
     f1.write(a)
     f1.close()
-    
-def retk(c,value):
-    a=b""
-    a=c*value
-    return a
-def retm(c,value):
-    a=b""
-    a=c*value
-    return a
-def retg(c,value):
-    a=b""
-    a=c*value
-    return a
-kk=retk(cc,k)
-mm=retm(kk,k)
-gg=retg(mm,k)
 v=b""
 n=input()
 n=n.strip()
@@ -39,15 +24,15 @@ if nn>-1 and nn<4:
     print("\033[40;37m\ngive me the unit ? ")
     nnn=input()
     nnn=nnn.strip()
-    nnn=int(nnn)
+    nnn=float(nnn)
     if nn==0:
-        retb(cc,nnn,n)
+        retb(cc,int(nnn),n)
     if nn==1:
-        retb(kk,nnn,n)
+        retb(cc,int(float(nnn)*float(k)),n)
     if nn==2:
-        retb(mm,nnn,n)
+        retb(cc,int(float(nnn)*float(m)),n)
     if nn==3:
-        retb(gg,nnn,n)
+        retb(cc,int(float(nnn)*float(g)),n)
 
 
 
